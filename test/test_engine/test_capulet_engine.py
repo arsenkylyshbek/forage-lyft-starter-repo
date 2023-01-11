@@ -3,7 +3,7 @@ from engine.capulet_engine import CapuletEngine
 
 
 class TestCapuletEngine(unittest.TestCase):
-    def should_be_serviced(self):
+    def test_needs_service_true(self):
         # last_service_date = datetime.today().year
 
         current_mileage = 30001
@@ -11,7 +11,7 @@ class TestCapuletEngine(unittest.TestCase):
         engine = CapuletEngine(current_mileage, last_service_mileage)
         self.assertTrue(engine.needs_service())
 
-    def should_not_be_serviced(self):
+    def test_needs_service_false(self):
         current_mileage = 10000
         last_service_mileage = 0
         engine = CapuletEngine(current_mileage, last_service_mileage)

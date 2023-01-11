@@ -3,7 +3,7 @@ from engine.willoughby_engine import WilloughbyEngine
 
 
 class TestWilloughbyEngine(unittest.TestCase):
-    def should_be_serviced(self):
+    def test_needs_service_true(self):
         # last_service_date = datetime.today().year
 
         current_mileage = 60001
@@ -11,7 +11,7 @@ class TestWilloughbyEngine(unittest.TestCase):
         engine = WilloughbyEngine(current_mileage, last_service_mileage)
         self.assertTrue(engine.needs_service())
 
-    def should_not_be_serviced(self):
+    def test_needs_service_false(self):
         current_mileage = 10000
         last_service_mileage = 0
         engine = WilloughbyEngine(current_mileage, last_service_mileage)
